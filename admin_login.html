@@ -1,0 +1,27 @@
+<?php
+session_start();
+include 'db_connect.php';
+
+if(isset($_POST['login'])){
+    $username = trim($_POST['username']);
+    $password = trim($_POST['password']);
+
+    
+ 
+}
+?>
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>From-Farm-to-Fork</title>
+</head>
+<body>
+    <h2>Admin Login</h2>
+    <form method="POST">
+        Username: <input type="text" name="username" required><br><br>
+        Password: <input type="password" name="password" required><br><br>
+        <input type="submit" name="login" value="
+
+
