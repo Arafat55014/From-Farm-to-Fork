@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retailer Panel</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body { font-family: 'Segoe UI', sans-serif; }
+.sidebar { height: 100vh; background: #1e293b; color: white; }
+.sidebar .nav-link { color: #cbd5e1; font-weight: 500; }
+.sidebar .nav-link:hover { background: #334155; color: #fff; border-radius: 8px; }
+.content { padding: 20px; min-height: 100vh; background: #f8fafc; }
+.card { margin-bottom: 15px; border-radius: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.stat-card { text-align: center; padding: 15px; }
+.stat-card h4 { font-size: 1.2rem; }
+.product-img { width: 60px; height: 40px; object-fit: cover; border-radius: 6px; }
+</style>
+</head>
+<body>
+<div class="container-fluid">
+<div class="row">
+  <!-- Sidebar -->
+  <div class="col-md-3 col-lg-2 p-0 sidebar">
+    <h2 class="text-white p-3">⚙️ Admin Panel</h2>
+    <nav class="nav flex-column mt-2">
+      <a href="livestock.html" class="nav-link">🐄 Livestock</a>
+      <a href="warehouse.html" class="nav-link">🏬 Warehouse</a>
+      <a href="agent.html" class="nav-link">👨‍💼 Agent Price Analytics</a>
+      <a href="retailer.html" class="nav-link active">🛒 Retailer</a>
+      <a href="meatproduction.html" class="nav-link">🥩 Meat Production</a>
+      <a href="meatconsumption.html" class="nav-link">📈 Meat Consumption</a>
+      <a href="order.html" class="nav-link">📦 Order</a>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="col-md-9 col-lg-10 content">
+    <h1>🛒 Retailer Dashboard</h1>
+    <p>Manage retailers, demand/supply, and inventory.</p>
+
+    <!-- Top Stats -->
+    <div class="row mb-4">
+      <div class="col-md-3"><div class="card stat-card"><h4>Total Products</h4><p id="totalProducts">0 kg</p></div></div>
+      <div class="col-md-3"><div class="card stat-card"><h4>Meat Types</h4><p id="meatTypes">0</p></div></div>
+      <div class="col-md-3"><div class="card stat-card"><h4>Customers Served</h4><p>28</p></div></div>
+      <div class="col-md-3"><div class="card stat-card"><h4>Total Sales</h4><p>৳ 3000</p></div></div>
+    </div>
+
+    <!-- Inventory Table -->
+    <div class="card p-3 mb-4">
+      <h5>Inventory Table</h5>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Available Quantity (kg)</th>
+            <th>Price per kg (৳)</th>
+            <th>Total Value (৳)</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="inventoryTable"></tbody>
+      </table>
+      <button class="btn btn-primary btn-sm" onclick="addInventory()">Add Product</button>
+    </div>
+
+    <!-- Retailers Table -->
+    <div class="card p-3">
+      <h5>Retailers</h5>
+      <table class="table table-bordered" id="retailer-table">
+        <thead>
+          <tr><th>Name</th><th>Location</th><th>Contact</th><th>Demand (kg)</th><th>Actions</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button class="btn btn-primary btn-sm" onclick="addRetailer()">Add Retailer</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+// ---------------- Inventory Section ----------------
+let inventory = [
+  { product:"T-Bone", qty:15, price:200 },
+  { product:"Liver", qty:10, price:180 },
+  { product:"Beef Steak", qty:12, price:250 },
+  { product:"Goat Leg", qty:8, price:220 }
+];
+
+function renderInventory(){
+  const tbody = document.getElementById("inventoryTable");
+  tbody.innerHTML="";
+  let totalQty=0;
+  inventory.forEach((i,index)=>{
+    const totalValue = i.qty*i.price;
+    totalQty += i.qty;
+    tbody.innerHTML+=`
+      <tr>
+        <td>${i.product}</td>
+        <td>${i.qty}</td>
+        <td>${i.price}</td>
+        <td>${totalValue}</td>
+        <td>
+          <button class="btn btn-sm btn-warning" onclick="editInventory(${index})">Edit</button>
+          <button class="btn btn-sm btn-danger" onclick="deleteInventory(${index})">Delete</button>
+        </td>
+      </tr>`;
+  });
+  document.getElementById("totalProducts").innerText = totalQty+" kg";
+  document.getElementById("meatTypes").innerText = inventory.length;
+}
+
+function addInventory(){
+  const product = prompt("Product Name:");
+  const qty = parseInt(prompt("Quantity (kg):"),10);
+  const price = parseInt(prompt("Price per kg (৳):"),10);
+  if(product && qty>=0 && price>=0){
+    inventory.push({product,qty,price});
+    renderInventory();
+  }
+}
+function editInventory(index){
+  const i = inventory[index];
+  const product = prompt("Edit Product Name:", i.product);
+  const qty = parseInt(prompt("Edit Quantity (kg):", i.qty),10);
+  const price = parseInt(prompt("Edit Price (৳):", i.price),10);
+  if(product && qty>=0 && price>=0){
+    inventory[index] = {product,qty,price};
+    renderInventory();
+  }
+}
+function deleteInventory(index){
+  if(confirm("Delete this product?")){
+    inventory.splice(index,1);
+    renderInventory();
+  }
+}
+
+// ---------------- Retailer Section ----------------
+let retailers = [
+  {name:"Shop A", loc:"Dhaka", contact:"017XXXXXXXX", demand:50},
+  {name:"Shop B", loc:"Chittagong", contact:"018XXXXXXXX", demand:30}
+];
+
+function renderRetailerTable(){
+  const tbody = document.getElementById("retailer-table").getElementsByTagName('tbody')[0];
+  tbody.innerHTML="";
+  retailers.forEach((r,i)=>{
+    const row = tbody.insertRow();
+    row.innerHTML=`<td>${r.name}</td><td>${r.loc}</td><td>${r.contact}</td><td>${r.demand}</td>
+      <td>
+        <button class="btn btn-sm btn-warning" onclick="editRetailer(${i})">Edit</button>
+        <button class="btn btn-sm btn-danger" onclick="deleteRetailer(${i})">Delete</button>
+      </td>`;
+  });
+}
+function addRetailer(){
+  const name = prompt("Name:");
+  const loc = prompt("Location:");
+  const contact = prompt("Contact:");
+  const demand = parseInt(prompt("Demand (kg):"),10);
+  if(name && loc && contact && demand>=0){ 
+    retailers.push({name,loc,contact,demand}); 
+    renderRetailerTable(); 
+  }
+}
+function editRetailer(i){
+  const r = retailers[i];
+  const name = prompt("Edit Name:", r.name);
+  const loc = prompt("Edit Location:", r.loc);
+  const contact = prompt("Edit Contact:", r.contact);
+  const demand = parseInt(prompt("Edit Demand (kg):", r.demand),10);
+  if(name && loc && contact && demand>=0){ 
+    retailers[i]={name,loc,contact,demand}; 
+    renderRetailerTable(); 
+  }
+}
+function deleteRetailer(i){ 
+  if(confirm("Delete this retailer?")){ 
+    retailers.splice(i,1); 
+    renderRetailerTable(); 
+  } 
+}
+
+// Initial Render
+renderInventory();
+renderRetailerTable();
+</script>
+</body>
+</html>
