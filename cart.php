@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>From Farm To Fork</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid px-5 d-none d-lg-block">
+        <div class="row gx-5 py-3 align-items-center">
+            <div class="col-lg-3">
+                <div class="d-flex align-items-center justify-content-start">
+                    <i class="bi bi-phone-vibrate fs-1 text-primary me-2"></i>
+                    <h2 class="mb-0">+8801884624832</h2>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="d-flex align-items-center justify-content-center">
+                    <a href="index.php" class="navbar-brand ms-lg-5">
+                        <h1 class="m-0 display-4 text-primary"><span class="text-secondary">FarmTo</span>Fork</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-5">
+        <a href="index.php" class="navbar-brand d-flex d-lg-none">
+            <h1 class="m-0 display-4 text-secondary"><span class="text-white">FarmTo</span>Fork</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto py-0">
+                <a href="index.php" class="nav-item nav-link active">Home</a>
+                <a href="service.php" class="nav-item nav-link">Service</a>
+                <a href="product.php" class="nav-item nav-link">Product</a>
+                <!-- Pages Dropdown -->
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="pagesDropdown" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu bg-secondary rounded-0 m-0">
+                            <a href="cart.php" class="dropdown-item">Cart</a>
+                            <a href="chackout.php" class="dropdown-item">Checkout</a>
+                        </div>
+                    </div>
+
+                <a href="contact.php" class="nav-item nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+        <!-- Cart Page Start -->
+        <div class="container-fluid py-5">
+            <div class="container py-5">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Products</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Handle</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <div class="d-flex align-items-center">
+                                        <img src="img/vegetable-item-3.png" class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt="">
+                                    </div>
+                                </th>
+                                <td>
+                                    <p class="mb-0 mt-4">Big Banana</p>
+                                </td>
+                                <td>
+                                    <p class="mb-0 mt-4">2.99 $</p>
+                                </td>
+                                <td>
+                                    <div class="input-group quantity mt-4" style="width: 100px;">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-sm btn-minus rounded-circle bg-light border" >
+                                            <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                        <input type="text" class="form-control form-control-sm text-center border-0" value="1">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-sm btn-plus rounded-circle bg-light border">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="mb-0 mt-4">2.99 $</p>
+                                </td>
+                                <td>
+                                    <button class="btn btn-md rounded-circle bg-light border mt-4" >
+                                        <i class="fa fa-times text-danger"></i>
+                                    </button>
+                                </td>
+                            
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <div class="d-flex align-items-center">
+                                        <img src="img/vegetable-item-5.jpg" class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt="" alt="">
+                                    </div>
+                                </th>
+                                <td>
+                                    <p class="mb-0 mt-4">Potatoes</p>
+                                </td>
+                                <td>
+                                    <p class="mb-0 mt-4">2.99 $</p>
+                                </td>
+                                <td>
+                                    <div class="input-group quantity mt-4" style="width: 100px;">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-sm btn-minus rounded-circle bg-light border" >
+                                            <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                        <input type="text" class="form-control form-control-sm text-center border-0" value="1">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-sm btn-plus rounded-circle bg-light border">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="mb-0 mt-4">2.99 $</p>
+                                </td>
+                                <td>
+                                    <button class="btn btn-md rounded-circle bg-light border mt-4" >
+                                        <i class="fa fa-times text-danger"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <div class="d-flex align-items-center">
+                                        <img src="img/vegetable-item-2.jpg" class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt="" alt="">
+                                    </div>
+                                </th>
+                                <td>
+                                    <p class="mb-0 mt-4">Awesome Brocoli</p>
+                                </td>
+                                <td>
+                                    <p class="mb-0 mt-4">2.99 $</p>
+                                </td>
+                                <td>
+                                    <div class="input-group quantity mt-4" style="width: 100px;">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-sm btn-minus rounded-circle bg-light border" >
+                                            <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                        <input type="text" class="form-control form-control-sm text-center border-0" value="1">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-sm btn-plus rounded-circle bg-light border">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="mb-0 mt-4">2.99 $</p>
+                                </td>
+                                <td>
+                                    <button class="btn btn-md rounded-circle bg-light border mt-4" >
+                                        <i class="fa fa-times text-danger"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-5">
+                    <input type="text" class="border-0 border-bottom rounded me-5 py-3 mb-4" placeholder="Coupon Code">
+                    <button class="btn border-secondary rounded-pill px-4 py-3 text-primary" type="button">Apply Coupon</button>
+                </div>
+                <div class="row g-4 justify-content-end">
+                    <div class="col-8"></div>
+                    <div class="col-sm-8 col-md-7 col-lg-6 col-xl-4">
+                        <div class="bg-light rounded">
+                            <div class="p-4">
+                                <h1 class="display-6 mb-4">Cart <span class="fw-normal">Total</span></h1>
+                                <div class="d-flex justify-content-between mb-4">
+                                    <h5 class="mb-0 me-4">Subtotal:</h5>
+                                    <p class="mb-0">$96.00</p>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <h5 class="mb-0 me-4">Shipping</h5>
+                                    <div class="">
+                                        <p class="mb-0">Flat rate: $3.00</p>
+                                    </div>
+                                </div>
+                                <p class="mb-0 text-end">Shipping to Ukraine.</p>
+                            </div>
+                            <div class="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
+                                <h5 class="mb-0 ps-4 me-4">Total</h5>
+                                <p class="mb-0 pe-4">$99.00</p>
+                            </div>
+                            <button class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4" type="button">Proceed Checkout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Cart Page End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-footer bg-primary text-white mt-5">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <h4 class="text-white mb-4">Get In Touch</h4>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-geo-alt text-white me-2"></i>
+                                <p class="text-white mb-0">Bashundhara Residential Area, Dhaka</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-envelope-open text-white me-2"></i>
+                                <p class="text-white mb-0">arafathridoy333@gmail.com</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-telephone text-white me-2"></i>
+                                <p class="text-white mb-0">+8801884624832</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <h4 class="text-white mb-4">Quick Links</h4>
+                            <div class="d-flex flex-column justify-content-start">
+                                <a class="text-white mb-2" href="#"><i class="bi bi-arrow-right text-white me-2"></i>Home</a>
+                                <a class="text-white mb-2" href="#"><i class="bi bi-arrow-right text-white me-2"></i>Our Services</a>
+                                <a class="text-white" href="#"><i class="bi bi-arrow-right text-white me-2"></i>Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-lg-n5">
+                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-secondary p-5">
+                        <h4 class="text-white">Newsletter</h4>
+                        <h6 class="text-white">Subscribe Our Newsletter</h6>
+                        <form action="">
+                            <div class="input-group">
+                                <input type="text" class="form-control border-white p-3" placeholder="Your Email">
+                                <button class="btn btn-primary">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; <a class="text-secondary fw-bold" href="#">From Farm To Fork</a>. All Rights Reserved. Designed by <a class="text-secondary fw-bold" href="https://htmlcodex.com">HTML Codex</a></p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
