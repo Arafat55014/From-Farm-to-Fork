@@ -6,5 +6,7 @@ Purpose: This project is designed to analyze the demand and supply of meat produ
 
 Key Features:
    Data Analysis: Utilizes real-time data to analyze demand and supply.
+   
    Forecasting: Predicts future demand to help with inventory management.
+   
    Visualization: Displays data through charts and graphs for easy understanding.
