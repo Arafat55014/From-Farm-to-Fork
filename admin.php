@@ -19,13 +19,13 @@ body { font-family: 'Segoe UI', sans-serif; }
     <div class="col-md-3 col-lg-2 p-0 sidebar">
       <h2 class="text-white p-3">⚙️ Admin Panel</h2>
       <nav class="nav flex-column mt-2">
-        <a href="livestock.html" class="nav-link">🐄 Livestock</a>
-        <a href="warehouse.html" class="nav-link">🏬 Warehouse</a>
-        <a href="agent.html" class="nav-link">👨‍💼 Agent Price Analytics</a>
-        <a href="retailer.html" class="nav-link">🛒 Retailer</a>
-        <a href="meatproduction.html" class="nav-link">🥩 Meat Production</a>
-        <a href="meatconsumption.html" class="nav-link">📈 Meat Consumption</a>
-        <a href="order.html" class="nav-link">📦 Order</a>
+        <a href="livestock.php" class="nav-link">🐄 Livestock</a>
+        <a href="warehouse.php" class="nav-link">🏬 Warehouse</a>
+        <a href="agent.php" class="nav-link">👨‍💼 Agent Price Analytics</a>
+        <a href="retailer.php" class="nav-link">🛒 Retailer</a>
+        <a href="meatproduction.php" class="nav-link">🥩 Meat Production</a>
+        <a href="meatconsumption.php" class="nav-link">📈 Meat Consumption</a>
+        <a href="order.php" class="nav-link">📦 Order</a>
       </nav>
     </div>
 
